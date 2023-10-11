@@ -1,0 +1,107 @@
+@import './variables.scss';
+
+body{
+    font-size: $base-font;
+}
+
+.blue{
+    color:$blue-primary;
+}
+
+.violet{
+    color:$violet-primary;
+}
+
+h1,h2,h3,h4,h5{
+    font-weight: 100;
+}
+h1, h2, h3, h4{
+    font-family:$bellefair;
+    text-transform: uppercase;
+}
+
+h1{
+    font-size: rem-calc(150px);
+}
+
+h2{
+    font-size: rem-calc(100px);
+}
+
+h3{
+    font-size: rem-calc(56px);
+    line-height: rem-calc(65px);
+}
+
+h4{
+    font-size: rem-calc(32px);
+    line-height: rem-calc(37px);
+    opacity: 0.5;
+}
+
+h5{
+    font-family: $barlow;
+    font-size: rem-calc(28px);
+    letter-spacing: rem-calc(4.75px);
+    text-transform: uppercase;
+    b{
+        opacity: .25;
+    }
+}
+.subHeading1{
+    font-family:$bellefair;
+    font-size: rem-calc(28px);
+    text-transform: uppercase;
+}
+
+.subHeading2{
+    font-family: $barlow;
+    font-size: rem-calc(14px);
+    letter-spacing: rem-calc(2.35px);
+    text-transform: uppercase;
+    color:$violet-primary
+}
+
+p{
+    font-family: $barlow;
+    font-size: rem-calc(18px);
+    line-height: rem-calc(32px);;
+}
+
+nav{
+    font-family: $barlow;
+    font-size: 1rem;
+    letter-spacing: rem-calc(2.7px);
+}
+@media screen and (max-width:$mobile-width){
+    h1{
+        font-size: rem-calc(80px);
+        line-height: rem-calc(100px);
+    }
+    h5{
+        font-size: rem-calc(16px);
+        letter-spacing: rem-calc(2.7px);
+    }
+    p{
+        font-size: rem-calc(15px);
+        line-height: rem-calc(25px);
+    }
+}
+@media screen and (max-width:$tablet-width) and (min-width:$mobile-width-plus1){
+    h5{
+        font-size: rem-calc(20px);
+        letter-spacing: rem-calc(3.38px);
+    }
+    p{
+        font-size: rem-calc(16px);
+        line-height: rem-calc(28px);
+    }
+
+}
+
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-y: hidden;
+}

@@ -1,0 +1,147 @@
+@import '../../scss/variables.scss';
+
+#destination{
+    width: 100%;
+    background-color: black;
+    color: white;
+    background-size: cover;
+    // desktop
+    @media screen and (min-width:$tablet-width-plus1){
+        height: 100vh;
+    }
+    @media screen and (min-width:$mobile-width-plus1){
+        background-image: url('./images/background-destination-desktop.jpg');
+    }
+    //tablet
+    @media screen and (min-width:$mobile-width-plus1) and (max-width:$tablet-width){
+        background-image: url('./images/background-destination-tablet.jpg');        
+
+        padding-top:10rem;
+    }
+    //mobile
+    @media screen and (max-width:$mobile-width){
+        background-image: url('./images/background-destination-mobile.jpg');
+        height: 100vh;
+    }
+
+    .container{
+        @media screen and (min-width:$tablet-width-plus1){
+            display: flex;
+            justify-content: space-between;
+            align-self: baseline;
+            flex-direction: column;
+            margin:11rem 5rem 5rem 5rem;
+            width: rem-calc(1116px);
+        }
+        @media screen and (min-width:$mobile-width) and (max-width:$tablet-width){
+            &>div:first-child{
+                margin:1rem auto 4rem 4rem;
+            }
+        }
+
+        @media screen and (max-width:$tablet-width){
+            display: flex;
+            justify-content: space-around;
+            flex-direction: column;
+            height: 100%;
+            align-items: center;
+            
+            .dinamicContent{
+                flex-direction: column;
+                text-align: center;
+                margin:0;
+                &>div:first-child{
+                    width: rem-calc(300px);
+                    height: rem-calc(300px);
+                    img{
+                        width: 100%;
+                    }
+                }
+                ul{
+                    position: relative;
+                    top:0;
+                    margin:0 auto;
+                }
+                .info{
+                    width: 60%;
+                }
+                h2{
+                    font-size: rem-calc(80px);
+                    line-height: rem-calc(92px);
+                }
+            }
+        }
+        @media screen and (max-width:$mobile-width){
+            &>div:first-child{
+                margin:5rem 0 0 0 ;
+            }
+            .dinamicContent{
+                &>div:first-child{
+                    width: rem-calc(170px);
+                    height: rem-calc(170px);
+                    img{
+                        width: 100%;
+                    }
+                }
+                h2{
+                    font-size: rem-calc(56px);
+                    line-height: rem-calc(65px);
+                }
+                p{
+                    font-size: rem-calc(15px);
+                    line-height: rem-calc(25px);
+                }
+            }
+        }
+    }
+    .dinamicContent{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        margin-top:5rem;
+        &>div{
+            width: rem-calc(445px);
+            height: rem-calc(445px);
+        }
+        .info{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            p{
+                font-family: $barlowRegular;
+                color:$violet-primary
+            }
+        }
+        hr{
+            background-color:#383B4B;
+            opacity: 0.1;
+            margin:3rem 0 2rem 0;
+        }
+        ul{
+            position: absolute;
+            top:rem-calc(-27px);
+            display: flex;
+            justify-content: space-between;
+            width: rem-calc(285px);
+            height: rem-calc(34px);
+            font-family: $barlow;
+            font-size:1rem;
+            letter-spacing: rem-calc(2.7px);
+            li{
+                cursor: pointer;
+                list-style-type: none;
+            }
+        }
+        .subInfo{
+            display: flex;
+            &>div{
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                width: 100%;
+                height: rem-calc(61px);
+            }
+        }
+    }
+}

@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&family=Barlow&family=Bellefair&display=swap');
+
+$mobile-width: 767px;
+$tablet-width: 1023px;
+$mobile-width-plus1: 768px;
+$tablet-width-plus1: 1024px;
+
+$blue-primary:#0B0D17;
+$violet-primary:#D0D6F9;
+
+$bellefair: 'Bellefair', serif;
+$barlow: 'Barlow Condensed', sans-serif;
+$barlowRegular: 'Barlow', sans-serif;
+$base-font:16px;
+
+@function rem-calc($pixel) {
+    $rem: calc($pixel / $base-font);
+    
+    @return #{$rem}rem;
+  }

@@ -1,0 +1,99 @@
+@import '../../scss/variables.scss';
+
+#homeBackground{
+    .container{
+        @media screen and (min-width:$tablet-width-plus1){
+            display: flex;
+            justify-content: space-between;
+            align-self: end;
+            margin:5rem;
+            width: rem-calc(1116px);
+        }
+        @media screen and (max-width:$tablet-width){
+            display: flex;
+            justify-content: space-around;
+            flex-direction: column;
+            height: 100%;
+            align-items: center;
+        }
+    }
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    color: white;
+    background-size: cover;
+    // desktop
+    @media screen and (min-width:$mobile-width-plus1){
+        background-image: url('./images/background-home-desktop.jpg');
+        #textLeft{
+            width: rem-calc(450px);
+            height: rem-calc(382px);
+        }
+        .explore{
+            width: rem-calc(450px);
+            height: rem-calc(450px);
+            button{
+                font-size: rem-calc(32px);
+                line-height: rem-calc(37px);
+                letter-spacing: rem-calc(2px);
+                width: rem-calc(274px);
+                height: rem-calc(274px);
+                &:hover + .underlay{
+                    width: rem-calc(450px);
+                    height: rem-calc(450px);
+                }
+            }
+            .underlay{
+                position: absolute;
+                border-radius: 50%;
+                width: rem-calc(274px);
+                height: rem-calc(274px);
+                background-color: #ffffff;
+                opacity: 0.1;
+                transition: all 0.3s;
+                z-index: 1;            
+            }
+        }
+    }
+    //tablet
+    @media screen and (max-width:$tablet-width){
+        text-align: center;
+        padding-top: 10rem;
+        padding-bottom:2rem;
+    }
+    @media screen and (min-width:$mobile-width-plus1) and (max-width:$tablet-width){
+        background-image: url('./images/background-home-tablet.jpg');        
+    }
+    //mobile
+    @media screen and (max-width:$mobile-width){
+        background-image: url('./images/background-home-mobile.jpg');
+        #textLeft,.explore{
+            width: 80%;
+        }
+        .explore{
+            button{
+                font-size: rem-calc(20px);
+                line-height: rem-calc(23px);
+                letter-spacing: rem-calc(1.5px);
+                width: rem-calc(150px);
+                height: rem-calc(150px);
+            }
+        }
+    }  
+
+    .explore{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        button{
+            font-family: $bellefair;            
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            background-color: #ffffff;
+            z-index: 2;
+            text-transform: uppercase;            
+        }
+        
+    }
+}
