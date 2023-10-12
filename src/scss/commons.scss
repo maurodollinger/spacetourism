@@ -73,6 +73,17 @@ nav{
     font-size: 1rem;
     letter-spacing: rem-calc(2.7px);
 }
+@media screen and (max-width:$tablet-width){
+    h3{
+        font-size: rem-calc(40px);
+        line-height: rem-calc(46px);
+    }
+
+    h4{
+        font-size: rem-calc(24px);
+        line-height: rem-calc(28px);
+    }
+}
 @media screen and (max-width:$mobile-width){
     h1{
         font-size: rem-calc(80px);
@@ -96,7 +107,6 @@ nav{
         font-size: rem-calc(16px);
         line-height: rem-calc(28px);
     }
-
 }
 
 section{

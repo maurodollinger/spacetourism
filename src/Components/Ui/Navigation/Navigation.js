@@ -12,6 +12,10 @@ const Navigation = () => {
       return !prev;
     });
   };
+
+  const closeHamburger = () =>{
+    setOpenMobile(false);
+  }
   return (
     <Fragment>
       <nav id={styles.navigation}>
@@ -22,7 +26,7 @@ const Navigation = () => {
             key="home"
             className={location.pathname === "/" ? styles.active : ""}
           >
-            <Link to="/">00 HOME</Link>
+            <Link to="">00 HOME</Link>
           </li>
           <li
             key="destination"
@@ -30,19 +34,19 @@ const Navigation = () => {
               location.pathname === "/destination" ? styles.active : ""
             }
           >
-            <Link to="/destination">01 DESTINATION</Link>
+            <Link to="destination">01 DESTINATION</Link>
           </li>
           <li
             key="crew"
             className={location.pathname === "/crew" ? styles.active : ""}
           >
-            <Link to="/crew">02 CREW</Link>
+            <Link to="crew">02 CREW</Link>
           </li>
           <li
             key="technology"
             className={location.pathname === "/technology" ? styles.active : ""}
           >
-            <Link to="/technology">03 TECHNOLOGY</Link>
+            <Link to="technology">03 TECHNOLOGY</Link>
           </li>
         </ul>
         <div
@@ -53,27 +57,27 @@ const Navigation = () => {
       </nav>
       <div
         id={styles.mobileMenu}
-        onClick={toggleHamburger}
+        onClick={closeHamburger}
         >
         <div className={openMobile ? styles.open : styles.close} >
         <ul>
           <li key="home-mobile">
-            <Link to="/">
+            <Link to="">
               <b>00</b> HOME
             </Link>
           </li>
           <li key="destination-mobile">
-            <Link to="/destination">
+            <Link to="destination">
               <b>01</b> DESTINATION
             </Link>
           </li>
           <li key="crew-mobile">
-            <Link to="/crew">
+            <Link to="crew">
               <b>02</b> CREW
             </Link>
           </li>
           <li key="technology-mobile">
-            <Link to="/technology">
+            <Link to="technology">
               <b>03</b> TECHNOLOGY
             </Link>
           </li>

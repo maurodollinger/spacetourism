@@ -12,11 +12,11 @@ function App() {
   return (
     <Fragment >
       <Routes >
-        <Route path="/" element={<Layout />}>
+        <Route path="spacetourism/" element={<Layout />}>
           <Route index element={<Home />} />
-          <Route path='/technology' element={<Technology/>} />
-          <Route path='/crew' element={<Crew data={jsonData.crew}/>}/>
-          <Route path='/destination' element={<Destination data={jsonData.destinations}/>}/>
+          <Route path='technology' element={<Technology data={jsonData.technology}/>} />
+          <Route path='crew' element={<Crew data={jsonData.crew}/>}/>
+          <Route path='destination' element={<Destination data={jsonData.destinations}/>}/>
         </Route>        
       </Routes>
     </Fragment>

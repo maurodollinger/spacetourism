@@ -1,0 +1,137 @@
+@import '../../scss/variables.scss';
+
+#technology{
+    width: 100%;
+    background-color: black;
+    color: white;
+    background-size: cover;
+    height: 100vh;
+   /* @media screen and (min-width:$tablet-width-plus1){
+        height: 100vh;
+    }*/
+    @media screen and (min-width:$mobile-width-plus1){
+        background-image: url('./images/background-technology-desktop.jpg');
+    }
+    
+    @media screen and (min-width:$mobile-width-plus1) and (max-width:$tablet-width){
+        background-image: url('./images/background-technology-tablet.jpg');       
+
+        padding-top:10rem;
+    }
+    @media screen and (max-width:$mobile-width){
+        background-image: url('./images/background-technology-mobile.jpg');
+        height: 100vh;
+    }
+
+    .container{
+        @media screen and (min-width:$tablet-width-plus1){
+            display: flex;
+            justify-content: space-between;
+            align-self: baseline;
+            flex-direction: column;
+            margin:11rem 0rem 5rem 0rem;
+            width: rem-calc(1116px);
+            #imageMobileContainer{
+                display: none;
+            }
+        }
+        @media screen and (min-width:$mobile-width) and (max-width:$tablet-width){
+            &>div:first-child{
+                margin:1rem auto 4rem 4rem;
+            }
+        }
+        @media screen and (max-width:$tablet-width){
+            display: flex;
+            justify-content: space-around;
+            flex-direction: column;
+            height: 100%;
+            align-items: center;
+            width: 100%;
+            .dinamicContent{
+                width: 100%;
+                flex-direction: column;
+                text-align: center;
+                margin:0;
+            }
+            #imageMobileContainer{
+                width: 100%;
+                img{
+                    width: 100%;
+                }
+            }
+            #imageDesktopContainer{
+                display: none;
+            }
+        }
+    }
+    .dinamicContent{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top:5rem;
+        ul{
+            display: flex;
+            @media screen and (min-width:$tablet-width-plus1){
+                width: rem-calc(80px);
+                height: rem-calc(303px);
+                flex-direction: column;
+                li{
+                    width: rem-calc(80px);
+                    height: rem-calc(80px);
+                }
+            }
+            @media screen and (max-width:$tablet-width){
+                width: rem-calc(210px);
+                height: rem-calc(60px);
+                margin:2rem;
+                li{
+                    width: rem-calc(60px);
+                    height: rem-calc(60px);
+                }
+            }
+            justify-content: space-around;
+            font-family: $bellefair;
+            font-size: rem-calc(32px);
+            letter-spacing: rem-calc(2px);
+            line-height: rem-calc(37px);
+            list-style-type: none;
+            text-align: center;
+            li{                
+                
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                border: 1px solid rgba(255, 255, 255, 0.25);
+                transition: background-color 0.3s, color 0.3s;
+                &.active{
+                    background-color: white;
+                    color:$blue-primary;
+                }
+            }
+        }
+        .info{
+            height: rem-calc(303px);
+            width: rem-calc(470px);
+            span{
+                display: inline-block;
+                font-family: $barlow;
+                font-size: 1rem;
+                letter-spacing: rem-calc(2.7px);
+                line-height: rem-calc(19px);
+                margin:1rem auto;
+            }
+            p{
+                @media screen and (max-width:$tablet-width){
+                    margin-top: 1rem;
+                }
+                @media screen and (min-width:$tablet-width-plus1){
+                    width: rem-calc(444px);
+                }                
+                font-family: $barlowRegular;
+                color:$violet-primary;
+            }
+        }
+    }
+}
