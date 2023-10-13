@@ -12,7 +12,7 @@ function App() {
   return (
     <Fragment >
       <Routes >
-        <Route path="spacetourism/" element={<Layout />}>
+        <Route path="spacetourism/build/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path='technology' element={<Technology data={jsonData.technology}/>} />
           <Route path='crew' element={<Crew data={jsonData.crew}/>}/>
