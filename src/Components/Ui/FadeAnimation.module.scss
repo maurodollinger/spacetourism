@@ -1,0 +1,21 @@
+.fade-enter {
+    opacity: 0;
+    transition: opacity 600ms;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .fade-enter-active {
+    opacity: 1;
+  }
+  
+  .fade-exit {
+    opacity: 1;
+    transition: opacity 600ms;
+  }
+  
+  .fade-exit-active {
+    opacity: 0;
+  }

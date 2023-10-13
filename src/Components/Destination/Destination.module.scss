@@ -5,10 +5,9 @@
     background-color: black;
     color: white;
     background-size: cover;
+    height: 100%;
+
     // desktop
-    @media screen and (min-width:$tablet-width-plus1){
-        height: 100vh;
-    }
     @media screen and (min-width:$mobile-width-plus1){
         background-image: url('./images/background-destination-desktop.jpg');
     }
@@ -21,7 +20,7 @@
     //mobile
     @media screen and (max-width:$mobile-width){
         background-image: url('./images/background-destination-mobile.jpg');
-        height: 100vh;
+         overflow-y:auto;
     }
 
     .container{
@@ -63,7 +62,7 @@
                     margin:0 auto;
                 }
                 .info{
-                    width: 60%;
+                    width: 100%;
                 }
                 h2{
                     font-size: rem-calc(80px);
@@ -72,8 +71,10 @@
             }
         }
         @media screen and (max-width:$mobile-width){
+            padding:1rem;
+            justify-content: flex-start;
             &>div:first-child{
-                margin:5rem 0 0 0 ;
+                margin:5rem 0 5rem 0 ;
             }
             .dinamicContent{
                 &>div:first-child{
@@ -108,6 +109,9 @@
             flex-direction: column;
             justify-content: center;
             position: relative;
+            @media screen and (max-width:$mobile-width){
+                margin-bottom:3rem;
+            }
             p{
                 font-family: $barlowRegular;
                 color:$violet-primary
@@ -131,6 +135,28 @@
             li{
                 cursor: pointer;
                 list-style-type: none;
+                color:$violet-primary;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                justify-content: space-between;
+                text-align: center;
+                &::after{
+                    content:'';
+                    height: 2px;
+                    background-color: white;
+                    width: 100%;
+                    opacity: 0;
+                    margin: 0 2px 0 0;
+                    transition: opacity 0.3s;
+                }
+                &.active{
+                    color:white;
+                }
+                &.active::after{
+                    opacity: 1;
+                }
             }
         }
         .subInfo{

@@ -5,10 +5,8 @@
     background-color: black;
     color: white;
     background-size: cover;
-    height: 100vh;
-   /* @media screen and (min-width:$tablet-width-plus1){
-        height: 100vh;
-    }*/
+    height: 100%;
+    
     @media screen and (min-width:$mobile-width-plus1){
         background-image: url('./images/background-technology-desktop.jpg');
     }
@@ -19,8 +17,8 @@
         padding-top:10rem;
     }
     @media screen and (max-width:$mobile-width){
-        background-image: url('./images/background-technology-mobile.jpg');
-        height: 100vh;
+        background-image: url('./images/background-technology-mobile.jpg');       
+         overflow-y:auto;
     }
 
     .container{
@@ -33,6 +31,10 @@
             width: rem-calc(1116px);
             #imageMobileContainer{
                 display: none;
+            }
+            .info{
+                height: rem-calc(303px);
+                width: rem-calc(470px);
             }
         }
         @media screen and (min-width:$mobile-width) and (max-width:$tablet-width){
@@ -54,13 +56,20 @@
                 margin:0;
             }
             #imageMobileContainer{
-                width: 100%;
+                width: calc(100% + 2rem);
                 img{
                     width: 100%;
                 }
             }
             #imageDesktopContainer{
                 display: none;
+            }
+        }
+        @media screen and (max-width:$mobile-width){
+            justify-content: flex-start;
+            padding:1rem;
+            &>div:first-child{
+                margin:5rem 0 5rem 0 ;
             }
         }
     }
@@ -112,8 +121,9 @@
             }
         }
         .info{
-            height: rem-calc(303px);
-            width: rem-calc(470px);
+            @media screen and (max-width:$mobile-width){
+                margin-bottom:3rem;
+            }
             span{
                 display: inline-block;
                 font-family: $barlow;

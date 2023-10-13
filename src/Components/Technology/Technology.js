@@ -1,15 +1,40 @@
 import { useState, useEffect } from "react";
 import styles from "./Technology.module.scss";
+import FadeAnimation from "../Ui/FadeAnimation";
 
 const Technology = ({ data }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [showContent, setShowContent] = useState(false);
   const totalSlides = 3;
+  let touchStartX = 0;
+  let touchEndX = 0;
+
   const handleTech = (number) => {
     setCurrentIndex(number);
   };
 
   const nextSlide = () =>{
     setCurrentIndex((prevIndex)=>(prevIndex +1) % totalSlides);
+  }
+
+  const handleTouchStart = (e) =>{
+    touchStartX = e.touches[0].clientX;
+  }
+
+  const handleTouchEnd = (e) =>{
+    touchEndX = e.changedTouches[0].clientX;
+
+    const deltaX = touchEndX - touchStartX;
+
+    if(deltaX >0){
+      let prev = currentIndex -1;
+      if(prev===-1) prev = totalSlides-1;
+      handleTech(prev);
+    } else if(deltaX < 0){
+      let next = currentIndex +1;
+      if(next===totalSlides) next = 0;
+      handleTech(next);
+    }
   }
 
   useEffect(()=>{
@@ -23,9 +48,16 @@ const Technology = ({ data }) => {
       clearInterval(interval);
     }
   })
+
+  useEffect(()=>{
+    setShowContent(!showContent);
+  },[])
+
   const currentTechnology = data[currentIndex];
+
   return (
-    <section id={styles.technology}>
+    <section onTouchStart={(e)=> handleTouchStart(e)} onTouchEnd={(e)=>handleTouchEnd(e)} id={styles.technology}>
+      <FadeAnimation show={showContent}>
       <div className={styles.container}>
         <div>
           <h5>
@@ -72,6 +104,7 @@ const Technology = ({ data }) => {
           </div>
         </div>
       </div>
+      </FadeAnimation>
     </section>
   );
 };
